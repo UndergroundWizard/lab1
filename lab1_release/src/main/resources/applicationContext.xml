@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:myApp.properties"/>
+    <bean id="myPet_Dog"
+          class="com.donnu.lab1.spring_introduction.Dog">
+
+    </bean>
+
+    <bean id="myPet_Cat"
+          class="com.donnu.lab1.spring_introduction.Cat">
+
+    </bean>
+
+    <bean id="myCar_Toyota"
+          class="com.donnu.lab1.spring_introduction.Toyota">
+
+    </bean>
+
+    <bean id="myCar_Lada"
+          class="com.donnu.lab1.spring_introduction.Lada">
+
+    </bean>
+    <bean id="myEmployee1"
+          class="com.donnu.lab1.spring_introduction.Employee">
+
+        <property name="pet" ref="myPet_Dog"/>
+        <property name="car" ref="myCar_Lada"/>
+        <property name="name" value="${employee.name1}"/>
+        <property name="age" value="${employee.age1}"/>
+
+    </bean>
+    <bean id="myEmployee2"
+          class="com.donnu.lab1.spring_introduction.Employee">
+
+        <property name="pet" ref="myPet_Cat"/>
+        <property name="car" ref="myCar_Toyota"/>
+        <property name="name" value="${employee.name2}"/>
+        <property name="age" value="${employee.age2}"/>
+
+    </bean>
+</beans>
